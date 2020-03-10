@@ -46,6 +46,7 @@ const MultiBar = ({ style, navigation, activeTintColor, inactiveTintColor, rende
                 route={route}
                 renderIcon={renderIcon}
                 focused={focused}
+                labelText={route.routeName}
                 activeTintColor={activeTintColor}
                 inactiveTintColor={inactiveTintColor}
                 onPress={() => (!route.params || !route.params.navigationDisabled) && jumpTo(route.key)}
