@@ -6,7 +6,7 @@ import { TabIconStyles } from './Styles';
 
 const Styles = TabIconStyles;
 
-export const TabIcon = ({ route, renderIcon, focused, activeTintColor, inactiveTintColor, onPress }) => (
+export const TabIcon = ({ route, renderIcon, focused, activeTintColor, inactiveTintColor, onPress, labelText }) => (
   <TouchableOpacity
     style={Styles.tabStyle}
     onPress={() => onPress && onPress()}
@@ -17,10 +17,10 @@ export const TabIcon = ({ route, renderIcon, focused, activeTintColor, inactiveT
       tintColor: focused
         ? activeTintColor
         : inactiveTintColor
-    })}
-    {route.params && (
+    })} 
+    {(labelText && labelText !== 'Charities')&& (
       <Text
-        style={[Styles.labelStyle, { color: focused ? activeTintColor : inactiveTintColor }]}>{route.params.label}</Text>
+        style={[Styles.labelStyle, { color: focused ? activeTintColor : inactiveTintColor }]}>{labelText}</Text>
     )}
   </TouchableOpacity>
 );
